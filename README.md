@@ -5,6 +5,11 @@
 
 This is a simple stopwatch web application created using HTML, CSS, and JavaScript. It allows users to start, stop, and reset the stopwatch timer.
 
+## Rough Diagrammatic  Representation
+
+![rough skelton of app](https://github.com/ameya-6964/Coding-Ninja-Frontend-Skill-Test-1/assets/104457295/6419ecc8-1fde-42fe-938a-ea58a84f9797)
+
+
 ## Table of Contents
 
 - [Demo](#demo)
