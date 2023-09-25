@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Head section -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Stopwatch</title>
   </head>
+
+  <!-- Body section -->
   <body>
+    <!-- Main container -->
     <div id="container">
+      <!-- Display time -->
       <div class="time">
         <span class="digits" id="hr">00</span>
         <span class="text">Hr</span>
+
         <span class="digits" id="min">00</span>
         <span class="text">Min</span>
+
         <span class="digits" id="sec">00</span>
         <span class="text">Sec</span>
+
         <span class="digits" id="ms">0</span>
         <span class="text">Ms</span>
       </div>
+
+      <!-- Buttons container -->
       <div id="btn-container">
+        <!-- Start button -->
         <button class="btn" id="start">
           Start <i class="fa-solid fa-play"></i>
         </button>
+
+        <!-- Stop button -->
         <button class="btn" id="stop">
           Stop <i class="fa-solid fa-stop"></i>
         </button>
+
+        <!-- Reset button -->
         <button class="btn" id="reset">
           Reset <i class="fa-solid fa-arrow-rotate-left"></i>
         </button>
       </div>
     </div>
+
+    <!-- Script files -->
     <script src="script.js"></script>
     <script
       src="https://kit.fontawesome.com/fe4d71f046.js"
