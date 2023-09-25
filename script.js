@@ -1,3 +1,4 @@
+// Selecting DOM elements
 const mili = document.getElementById("ms");
 const sec = document.getElementById("sec");
 const min = document.getElementById("min");
@@ -6,81 +7,94 @@ const startButton = document.getElementById("start");
 const stopButton = document.getElementById("stop");
 const resetButton = document.getElementById("reset");
 
-//! Event Listeners
+// Adding event listeners
 startButton.addEventListener("click", start);
 stopButton.addEventListener("click", stop);
 resetButton.addEventListener("click", reset);
 
-//! Global Default Variables
+// Variables to store time values
 let hour = 0;
 let minute = 0;
 let second = 0;
 let miliSecond = 0;
+
+// Flag to indicate if timer is running
 let isRunning = false;
 
-//! Start Function
+// Start the timer
 function start() {
   isRunning = true;
   startButton.classList.add("disabled");
+
+  // Call the stopWatch function
   stopWatch();
 }
 
-//! Stop Function
+// Pause the timer
 function stop() {
   isRunning = false;
   startButton.classList.remove("disabled");
 }
-//! Reset Function
+
+// Reset the timer
 function reset() {
   isRunning = false;
   startButton.classList.remove("disabled");
+
+  // Reset time values
   hour = 0;
   minute = 0;
   second = 0;
   miliSecond = 0;
-  hr.innerHTML = "00";
-  min.innerHTML = "00";
-  sec.innerHTML = "00";
-  mili.innerHTML = "0";
+
+  // Update DOM elements
+  updateTimeDisplay();
 }
 
-//! Main Stopwatch Function
+// Main timer function
 function stopWatch() {
-  if (isRunning == true) {
+  if (isRunning) {
+    // Increment time values
     miliSecond++;
-    if (miliSecond == 10) {
+    if (miliSecond === 10) {
       second++;
       miliSecond = 0;
     }
-    if (second == 60) {
+    if (second === 60) {
       minute++;
       second = 0;
     }
-    if (minute == 60) {
+    if (minute === 60) {
       hour++;
       minute = 0;
       second = 0;
     }
 
-    let hrString = hour;
-    let minString = minute;
-    let secondString = second;
-    let miliSecondString = miliSecond;
-    if (hour < 10) {
-      hrString = "0" + hrString;
-    }
-    if (minute < 10) {
-      minString = "0" + minString;
-    }
+    // Format and update DOM elements
+    updateTimeDisplay();
 
-    if (second < 10) {
-      secondString = "0" + secondString;
-    }
-
-    mili.innerHTML = miliSecondString;
-    sec.innerHTML = secondString;
-    min.innerHTML = minString;
-    hr.innerHTML = hrString;
-    setTimeout("stopWatch()", 100);
+    // Repeat every 100 milliseconds
+    setTimeout(stopWatch, 100);
   }
+}
+
+// Update DOM with formatted time
+function updateTimeDisplay() {
+  let formattedHour = formatNumber(hour);
+  let formattedMinute = formatNumber(minute);
+  let formattedSecond = formatNumber(second);
+  let formattedMiliSecond = miliSecond;
+
+  mili.innerHTML = formattedMiliSecond;
+  sec.innerHTML = formattedSecond;
+  min.innerHTML = formattedMinute;
+  hr.innerHTML = formattedHour;
+}
+
+// Add leading zero
+function formatNumber(number) {
+  if (number < 10) {
+    return "0" + number;
+  }
+  return number;
 }
