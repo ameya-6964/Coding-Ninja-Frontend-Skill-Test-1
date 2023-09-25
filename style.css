@@ -1,11 +1,14 @@
+/* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&family=Orbitron&display=swap");
 
+/* Reset default browser styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body styles */
 body {
   background-color: #2b4162;
   background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
@@ -14,6 +17,8 @@ body {
   align-items: center;
   height: 100vh;
 }
+
+/* Main container styles */
 #container {
   background-color: #4d4855;
   background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
@@ -24,13 +29,17 @@ body {
   width: 75%;
 }
 
+/* Time digits styling */
 .digits {
   font-size: 7rem;
 }
 
+/* Time labels styling e.g. 'Hours' */
 .text {
   font-size: 2rem;
 }
+
+/* Time components styling */
 .time {
   font-family: "Inter", sans-serif;
   font-family: "Montserrat", sans-serif;
@@ -38,11 +47,13 @@ body {
   margin-left: 65px;
 }
 
+/* Button container styles */
 #btn-container {
   text-align: center;
   margin-top: 3rem;
 }
 
+/* Button base styles */
 .btn {
   padding: 1rem 3rem;
   font-size: 1rem;
@@ -51,17 +62,21 @@ body {
   color: white;
   transition: all 0.2s ease-in-out;
 }
+
+/* Button hover styles */
 .btn:hover {
   transform: scale(1.1);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
+/* Individual button styles */
 #start {
   background-color: green;
 }
 #start:hover {
   background: linear-gradient(to right, #00b712, #00e936);
 }
+
 #stop {
   background-color: red;
 }
@@ -75,6 +90,8 @@ body {
 #reset:hover {
   background: linear-gradient(to right, #1e90ff, #87cefa);
 }
+
+/* Disabled button styles */
 .disabled {
   pointer-events: none;
   opacity: 0.5;
